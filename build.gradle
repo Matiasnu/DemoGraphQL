@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// GraphQL
+	implementation 'com.graphql-java:graphql-spring-boot-starter:3.10.0'
+	implementation 'com.graphql-java:graphql-java-tools:4.3.0'
+	implementation 'com.graphql-java-kickstart:graphiql-spring-boot-starter:11.0.0'
+
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
